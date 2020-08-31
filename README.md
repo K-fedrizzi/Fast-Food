@@ -1,4 +1,8 @@
 Fast Food
+<h1 align="center">
+<img src="https://lh3.googleusercontent.com/2GCdQcwy7lGjL1qcV51fpCJTFWx-FFUZSmuJySfQnOT0T1ucQBfbrBh_idKkYQeUm-AfYU0=s170">
+</h1>
+
 
 # Sobre
 
@@ -23,13 +27,14 @@ suas vendas.
 
 # Referências
 
-* Ifood
-* Ubereats
+* [Ifood](https://www.ifood.com.br/)
+* [Ubereats](ubereats.com)
 
 # Tecnologias utilizadas nesse projeto
 
 * Banco de dados SQLite.
-* Figma para protótipos.
+* [Figma](https://www.figma.com/) para protótipos.
+* [Desenvolvimento Ágil](https://www.desenvolvimentoagil.com.br/) como método de desenvovimento.
 
 
 # Desenvolvedores deste projeto
