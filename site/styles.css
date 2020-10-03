@@ -14,16 +14,19 @@ padding-bottom: 40px;
     background-color: rgb(181, 181, 181);
    
 }
-
-  nav div {
-    
-    
-    display: inline-flex;
-    justify-content: space-between;
+nav{
+width: 800px;
+ display: inline-flex;
+ border: 2px solid black;
  align-items: center;
- padding-right: 0px;
+ justify-content: space-between;
+}
+  nav div {
+       justify-content: space-between;
+ border: 2px solid black;
     }
 
+ 
  a{
 text-decoration: none;
     }
@@ -34,13 +37,13 @@ color: black;
 text-align: center;
 align-items: center;
 position: center;
-padding:30px;
+padding:0px;
 
    }
   
    nav div ul li{
        display: inline-flex ;
-       padding: 10px;
+      padding-left: 10px;
    }
     h2{
        font-size: 200%;
