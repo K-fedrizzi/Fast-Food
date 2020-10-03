@@ -17,13 +17,13 @@ padding-bottom: 40px;
 nav{
 width: 800px;
  display: inline-flex;
- border: 2px solid black;
+ 
  align-items: center;
  justify-content: space-between;
 }
   nav div {
        justify-content: space-between;
- border: 2px solid black;
+
     }
 
  
@@ -32,7 +32,6 @@ text-decoration: none;
     }
    nav div h1 {
        font-size: 40px;
-       flex-direction: column;
 color: black;
 text-align: center;
 align-items: center;
