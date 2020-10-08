@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,700&family=Nunito:wght@700&family=Yellowtail&display=swap" rel="stylesheet">
+      <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css">-->
+        <link rel="stylesheet" type="text/css" href="stylesLista.css" />
+        
+        <title>Site Varmassera</title>
+        <script type="text/javascript" src="listaJS.js" defer></script>
+    </head>
+
+    <body>
+            
+            <header id="topo">
+                <nav>
+              <div class="logo"> <a href="#">FastFood Delicious</a></div> 
+              
+               <div class="titulo">
+                  <h1>FastFood Delicious</h1></div>
+                
+               <div class="menu"> 
+                <ul>
+                    <li><a href="#suporte">Suporte</a></li>
+                    <li><a href="#pedidos">Pedidos</a></li>
+                    <li><a href="#sair">sair</a></li>
+                  
+                </ul></div>
+            </nav>
+               
+                  
+            </header>
+  <section class="busca">
+      <div>
+        <div class="lupa"><img src="lupa.png" alt="lupa"></div>
+        <div class="inputTx"><input></input></div>
+        <div class="pesquisarBt"><button>Pesquisar</button></div>
+     </div>   
+   </section>   
+        <section class="sect1">
+           <div class="item">          
+               <div class="imagem"><img src="acai 1.png" alt="promo1"></div> 
+                <div class="info">
+                     <div class="titulo">  
+                             <div class="nomeProduto">Açaí com Frutas do Cerrado</div>   
+                            <div class="nomeRestaurante">Casa da Tia</div>    
+                    </div> 
+                    <div class="descricao">  
+                        <div class="avaliacao">
+                         <div class="estrelas">
+                             <ul>
+                                 <li><img class ="estrela" src="estrela.png" alt="*"></li>
+                                 <li><img class ="estrela" src="estrela.png" alt="*"></li>
+                                 <li><img class ="estrela" src="estrela.png" alt="*"></li>
+                                 <li><img class ="estrela" src="estrela.png" alt="*"></li>
+                                 <li><img class ="estrela" src="estrela.png" alt="*"></li>
+                             </ul>
+                         </div>
+                         <div class="pontuacao">0 Estrelas</div>
+                         <div class="avaliacaoBt"><button>Avaliações</button></div>
+                        </div>  
+                        <div id="descricaoTx" class="descricaoTx">Texto descricao <br/>Texto descricao <br/>
+                            Texto descricao <br/>
+                            Texto descricao <br/>
+                            Texto descricao <br/>
+                            Texto descricao <br/>
+                            Texto descricao <br/>
+                            Texto descricao <br/>
+                            Texto descricao <br/>
+                    <div class="btexp"><button id="expandirBt" onclick="expandir()">Ler Mais</button></div>  
+                 </div> 
+               </div> 
+                        
+                        
+                </div>
+            
+               <div class="compra">
+                   <div class="carrinho"><button><img src="carrinho.png" alt="carrinho"></button></div>
+                   <div class="promocao"><img src="promocao.png" alt="promoção"></div>
+                   <div class="preco">R$13,00</div>
+                </div> 
+                
+           </div>
+         
+           <div class="avaliacaoTx">
+               <div class="outrosUsuarios">
+                   
+                   <div class="listaAvaliacao">Comentários:
+                       <ul>
+                       <li><div class="nomeLista">nome:</div><div class="textoLista">texto</br>texto</br></div></li>
+                       <li><div class="nomeLista">nome:</div><div class="textoLista">texto</div></li>
+                       <li><div class="nomeLista">nome:</div><div class="textoLista">texto</div></li>
+                      
+                   </ul>
+                </div>
+                   <div class="novoComentario">
+                       <div class="caixaInput"><div>Comente:</div><textarea class="comentario" rows="5" cols="10" maxlength="200" ></textarea> </div>
+                       <div class="enviar"><button class="btEnviar">Enviar</button></div>
+                   </div>
+               </div>
+               <div class="minhaAvaliacao">
+                   <div class="estrelas">
+                    <ul>
+                        <li><button><img class ="estrela" src="estrela.png" alt="*"></button></li>
+                        <li><button><img class ="estrela" src="estrela.png" alt="*"></button></li>
+                        <li><button><img class ="estrela" src="estrela.png" alt="*"></button></li>
+                        <li><button><img class ="estrela" src="estrela.png" alt="*"></button></li>
+                        <li><button><img class ="estrela" src="estrela.png" alt="*"></button></li>
+                    </ul>
+                   </div>
+                   <div class="valorPontuacao">0 Estrelas</div>
+               </div>
+           </div>
+           
+
+        </section>
+        
+   
+           
+            <section id="suporte" class="suporte">
+              <div><h3>Suporte</h3></div>  
+
+                <div>
+                    <img src="tel.png" alt="telefone">
+                    <p> <a href="tel:67981302083">(67)98130-2083</a></p>
+                </div>
+                <div>
+                    <img src="mail.png" alt="email">
+                    <p><a href="mailto:tiagovarmassera@gmail.com">tiagovarmassera@gmail.com</a></p>
+                </div>
+            </section>
+            <footer>
+                <a href="#topo">VOTAR</a>
+                <p>Desenvolvido por Varmassera</p>
+            </footer>
+        
+    </body>
+</html>

@@ -17,32 +17,38 @@ padding-bottom: 40px;
 nav{
 width: 800px;
  display: inline-flex;
- 
- align-items: center;
- justify-content: space-between;
+ padding-top: 10px;
 }
-  nav div {
-       justify-content: space-between;
-
-    }
-
  
+nav div{
+  width: 33.333%;
+  height: 100%;
+  
+
+}
+
  a{
+   
 text-decoration: none;
     }
    nav div h1 {
-       font-size: 40px;
+    width: 250px;
+       font-size: 50px;
 color: black;
 text-align: center;
 align-items: center;
 position: center;
 padding:0px;
-
    }
-  
+   nav div ul {
+     
+    display: inline ;
+
+}
    nav div ul li{
-       display: inline-flex ;
-      padding-left: 10px;
+       display: inline ;
+      padding-left: 5px;
+ 
    }
     h2{
        font-size: 200%;
