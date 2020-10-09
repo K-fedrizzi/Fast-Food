@@ -46,6 +46,7 @@ p{
   justify-content: center;
   align-items: center;
   font-family: "Russo One";
+  border-radius: 5px;
 }
 
 .box {
@@ -81,4 +82,15 @@ label{
   text-align: center;
   font-size: 16px;
   opacity: 0.75;
+  }
+
+  .button {
+    background-color:#E85251;
+    border: none;
+    color: white;
+    padding: 20px 65px;
+    text-align: center;
+    font-family: Russo One;
+    font-size: 18px;
+    border-radius: 5px;
   }

@@ -66,6 +66,18 @@ body {
     text-align: center;
     font-family: "Russo One";
   }
+
+  .button {
+    background-color:#E85251;
+    border: none;
+    color: white;
+    padding: 20px 45px;
+    text-align: center;
+    font-family: Russo One;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
     /* Não é necessário, ele aumenta as bordas de todos os cadastros e cor externo */
   input:not([type="checkbox"]){
     width: 30%;
