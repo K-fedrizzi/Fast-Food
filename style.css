@@ -1,100 +1,184 @@
-/* Página de cadastro */
+/*********************************** Estilo da index.html *************************************/
 
-body {
-    background-color:#FFC1C1;
-  }
+.cabecalho {
+    height: 250px;
+}
 
-  .voltar{
-    font-size: 15px;
-    text-align: right;
-    color: yellowgreen;
-  }
 
-  .titulo{
-      font-family: "Russo One";
-      text-align: center;
-      font-size: 30px;
-      font-weight: bolder;
-    
-  }
+/*FAST FOOD DELICIUS*/
 
-  .NomeCompleto{
-    font-weight: bolder;
-    text-indent: 400px;
-  }
-  .NomeCompleto input{
-    float: center;
-  }
+.text_fonte {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
 
-  .Email{
-    font-weight: bolder;
-    text-indent: 400px;
-  }
+.text_position {
+    margin-left: 9.5px;
+    color: red;
+}
 
-  .Email input{
-    float: center;
-  }
+.caixaLogo {
+    margin-top: 25px;
+}
 
-  .Telefone{
-    font-weight: bolder;
-    text-indent: 400px;
-  }
 
-  .Telefone input{
-    float: center;
-  }
+/*imagem do cabeçalho*/
 
-  .Senha{
-    font-weight: bolder;
-    text-indent: 400px;
-  }
+.cabecalho_imagem {
+    height: 150px;
+    width: 190px;
+}
 
-  .Senha input{
-    float: center;
-  }
+.consulta {
+    position: absolute;
+    margin-left: 35px;
+    width: 600px;
+}
 
-  .ConfirmaSenha{
-    font-weight: bolder;
-    text-indent: 400px;
-  }
+.blocoCarousel_1 {
+    height: 230px;
+    width: 700px;
+    padding: 20px;
+    margin: 200px auto;
+    background-color: red;
+    margin-top: 10px;
+}
 
-  .ConfirmaSenha input{
-    float: center;
-  }
+.caroucel_1 {
+    width: 310px;
+    margin-left: 373px;
+    margin-top: -24px;
+}
 
-  .Enviar{
-    text-align: center;
-    font-family: "Russo One";
-  }
+.texto_promocao_config {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    margin-top: -240px;
+    margin-left: 35px;
+    font-size: 45px;
+    font-weight: bold;
+    color: seashell;
+}
 
-  .button {
-    background-color:#E85251;
-    border: none;
-    color: white;
-    padding: 20px 45px;
-    text-align: center;
-    font-family: Russo One;
-    font-size: 18px;
-    border-radius: 5px;
-  }
+.do {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 135px;
+    margin-top: -168px;
+    font-size: 40px;
+    font-weight: bold;
+    color: seashell;
+}
 
-    /* Não é necessário, ele aumenta as bordas de todos os cadastros e cor externo */
-  input:not([type="checkbox"]){
-    width: 30%;
-    margin-top: 4px;
-    padding: 10px;    
-    border: 1px solid #FFC1C1;
-    
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    
-    -webkit-box-shadow: 0px 1px 4px 0px rgba(226, 40, 40, 0.6) inset;
-    box-shadow: 0px 1px 4px 0px rgba(156, 31, 48, 0.6) inset;
-    
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-  }
+.dia {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 110px;
+    margin-top: -130px;
+    font-size: 60px;
+    font-weight: bold;
+    color: seashell;
+}
 
-  body {
-    font-family: 'Russo One';
-  }
+.tamContainerImagem {
+    width: 750px;
+    height: 170px;
+    margin-left: -45px;
+    margin-top: 20px;
+}
+
+.tam_imagem {
+    width: 200px;
+    height: 170px;
+}
+
+.oferta {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: -240px;
+    margin-left: 260px;
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+}
+
+.da {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 310px;
+    margin-top: -168px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.semana {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 243px;
+    margin-top: -100px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.indexPage {
+    height: 900px;
+}
+
+
+/**********************************************************************************************/
+
+
+/************************************ CadastrarRestaurante.html********************************/
+
+.formulario {
+    width: 600px;
+    margin-left: 750px;
+    margin-top: 60px;
+}
+
+.posButton {
+    margin-left: 245px;
+}
+
+.imagemCadastroRestaurante {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 250px;
+}
+
+.vendaMaisComRestaurante {
+    position: absolute;
+    margin-left: 340px;
+    margin-top: 160px;
+}
+
+.vendaMaisComRestauranteText {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+}
+
+
+/**********************************************************************************************/
+
+
+/***************************************** login.html*****************************************/
+
+.LoginForm {
+    background-color: rgb(250, 200, 200);
+    padding: 3px;
+    width: 400px;
+    height: 200px;
+    margin-left: 600px;
+    margin-top: 70px;
+}
+
+.botaoLogin {
+    margin-left: 130px;
+    margin-top: 10px;
+    width: 130px;
+}
+
+
+/**********************************************************************************************/
