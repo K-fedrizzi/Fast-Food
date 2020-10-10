@@ -1,0 +1,80 @@
+.cabecalho {
+    height: 250px;
+}
+
+
+/*FAST FOOD DELICIUS*/
+
+.text_fonte {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.text_position {
+    margin-left: 9.5px;
+    color: red;
+}
+
+.caixaLogo {
+    margin-top: 25px;
+}
+
+
+/*imagem do cabeçalho*/
+
+.cabecalho_imagem {
+    height: 150px;
+    width: 190px;
+}
+
+.consulta {
+    position: absolute;
+    margin-left: 35px;
+    width: 600px;
+}
+
+.blocoCarousel_1 {
+    height: 230px;
+    width: 700px;
+    padding: 20px;
+    margin: 200px auto;
+    background-color: red;
+    margin-top: 10px;
+}
+
+.caroucel_1 {
+    width: 310px;
+    margin-left: 373px;
+    margin-top: -24px;
+}
+
+#texto_promocao_config {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    margin-top: -240px;
+    margin-left: 35px;
+    font-size: 45px;
+    font-weight: bold;
+    color: seashell;
+}
+
+.do {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 135px;
+    margin-top: -168px;
+    font-size: 40px;
+    font-weight: bold;
+    color: seashell;
+}
+
+.dia {
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 135px;
+    margin-top: -130px;
+    font-size: 60px;
+    font-weight: bold;
+    color: seashell;
+}
