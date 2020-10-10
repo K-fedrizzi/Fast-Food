@@ -80,7 +80,9 @@ body{
         width: 100px;
     }
 /*******************************/
-
+ul li{
+    list-style-type: none;
+}
 .sect1{
     width: 800px;
     height: auto;
@@ -179,6 +181,7 @@ justify-content: space-between;
 padding-top: 10px;
 background-color: #F4F0F0;
 border: 1px solid gray;
+margin-bottom: 20px;
   }
   .descricaoTx .btexp{
       width:auto;
@@ -190,11 +193,23 @@ border: 1px solid gray;
     margin: 0 auto;
   }
  
-
+.avaliacaoTx{
+    display: none;
+}
+.minimizarAv {
+   
+   margin: 10px 150px;
+   display: grid;
+   justify-content: right;
+   padding-right: 0px;
+}
+.minimizarAv .avaliacaoBt {
+ }
 .listaAvaliacao{ 
     width: 450px;
-    padding: 50px; 
-   height:50px;         
+    padding-left: 50px; 
+    padding-right: 50px; 
+   height:100px;         
     display: grid;
     justify-content: left;
     overflow-x: auto;
@@ -283,7 +298,6 @@ align-items: center;
         width: 30px;
         height: 30px;
         filter:opacity(50%);
-        
     }
     .estrelas ul li button{
         background-color: transparent;

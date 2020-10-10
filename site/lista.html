@@ -37,8 +37,11 @@
         <div class="inputTx"><input></input></div>
         <div class="pesquisarBt"><button>Pesquisar</button></div>
      </div>   
-   </section>   
-        <section class="sect1">
+   </section>  
+   <section>
+       <ul>
+           <li>
+               <div class="sect1">
            <div class="item">          
                <div class="imagem"><img src="acai 1.png" alt="promo1"></div> 
                 <div class="info">
@@ -58,17 +61,11 @@
                              </ul>
                          </div>
                          <div class="pontuacao">0 Estrelas</div>
-                         <div class="avaliacaoBt"><button>Avaliações</button></div>
+                         <div class="avaliacaoBt"><button id="avaliacoesBt" class="avaliacoesBt" onclick="avaliacaoBt()">Avaliações</button></div>
                         </div>  
-                        <div id="descricaoTx" class="descricaoTx">Texto descricao <br/>Texto descricao <br/>
-                            Texto descricao <br/>
-                            Texto descricao <br/>
-                            Texto descricao <br/>
-                            Texto descricao <br/>
-                            Texto descricao <br/>
-                            Texto descricao <br/>
-                            Texto descricao <br/>
-                    <div class="btexp"><button id="expandirBt" onclick="expandir()">Ler Mais</button></div>  
+                        <div id="descricaoTx" class="descricaoTx">Texto descricao
+                          
+                    <div class="btexp"><button  id="expandirBt" class="expandirBt" onclick="expandir()">Ler Mais</button></div>  
                  </div> 
                </div> 
                         
@@ -83,9 +80,9 @@
                 
            </div>
          
-           <div class="avaliacaoTx">
+           <div id="avaliacaoTx" class="avaliacaoTx">
                <div class="outrosUsuarios">
-                   
+                   <div class="minimizarAv"><button class=minimizarBt onclick="minimizarAvaliacao()">Minimizar Avaliações</button></div>
                    <div class="listaAvaliacao">Comentários:
                        <ul>
                        <li><div class="nomeLista">nome:</div><div class="textoLista">texto</br>texto</br></div></li>
@@ -111,12 +108,14 @@
                    </div>
                    <div class="valorPontuacao">0 Estrelas</div>
                </div>
-           </div>
-           
-
-        </section>
+           </div>         
+        </div>
+    </li>
+  
+    </ul>
         
-   
+       
+   </section> 
            
             <section id="suporte" class="suporte">
               <div><h3>Suporte</h3></div>  
