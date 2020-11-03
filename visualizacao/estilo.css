@@ -1,0 +1,110 @@
+/* Página de Login */
+body {
+    background-color: #FFE4E1;
+  }
+
+  .btSair{ 
+    width: 100%;
+    height: auto;
+  align-items: center;
+text-align: right;
+  }
+  .btSair a{ 
+    font-size: 20px;
+    text-decoration: none;
+
+color: black;
+  }
+ 
+.titulo1{
+  font-family: "Russo One";
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.titulo2{
+  font-family: "Russo One";
+  color:#FF0000;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  top: auto;
+}
+h3{
+  font-size: 25px;
+  text-align: auto;
+  margin-top: auto;
+}
+h4{
+  font-size: 20px;
+  margin-top: 0;
+}
+p{
+  font-size: 20px;
+  text-align: center;
+}
+
+.container {
+  top: 60%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 80px 40px;
+  width: 300px;
+  height: 150px;
+  background:whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Russo One";
+  border-radius: 5px;
+margin:0 auto;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background: #fff;
+}
+
+.email{
+  width: 10px;
+  height: 10px;
+  background: #FF0000;
+  align-items: center;
+  justify-content: center;
+}
+
+label{
+  color: black;
+  position: relative;
+  font-family: "Russo One";
+  font-size: 14px;
+}
+
+.Entrar{
+    text-align: center;
+    
+    
+  }
+
+  .link{
+  font-family: "Russo One";
+  color:#FF0000;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.75;
+  }
+
+  .button {
+    background-color:#E85251;
+    border: none;
+    color: white;
+    padding: 20px 65px;
+    text-align: center;
+    font-family: Russo One;
+    font-size: 18px;
+    border-radius: 5px;
+  }

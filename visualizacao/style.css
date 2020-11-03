@@ -1,0 +1,148 @@
+/* Página de cadastro */
+
+body {
+  background-color: #FFE4E1;
+    
+  }
+
+  .voltar{ 
+    width: 100%;
+    height: auto;
+  align-items: center;
+text-align: right;
+  }
+  .voltar a{ 
+    font-family: "Russo One";
+    font-size: 20px;
+    text-decoration: none;
+
+color: black;
+  }
+
+  .titulo1{
+    font-family: "Russo One";
+    text-align: center;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+  
+  .titulo2{
+    font-family: "Russo One";
+    color:#FF0000;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bolder;
+    top: auto;
+  }
+  .titulo{
+
+      font-family: "Russo One";
+      text-align: center;
+      font-size: 30px;
+      font-weight: bolder;
+    padding-top: 50px;
+  }
+
+  .NomeCompleto{
+    display: grid;
+    width: auto;
+    height: auto;
+    font-weight: bolder;
+  }
+  .NomeCompleto input{
+    float: center;
+  }
+
+  .Email{
+    display: grid;
+    width: auto;
+    height: auto;
+    font-weight: bolder;
+  }
+ 
+
+  .Email input{
+    float: center;
+  }
+
+  .Telefone{
+    display: grid;
+    width: auto;
+    height: auto;
+    font-weight: bolder;
+  }
+
+  .Telefone input{
+    float: center;
+  }
+
+  .Senha{
+    display: grid;
+    width: auto;
+    height: auto;
+    font-weight: bolder;
+  }
+
+  .Senha input{
+    float: center;
+  }
+
+  .ConfirmaSenha{
+    display: grid;
+    width: auto;
+    height: auto;
+    font-weight: bolder;
+  }
+
+  .ConfirmaSenha input{
+    float: center;
+  }
+
+  .Enviar{
+    text-align: center;
+    font-family: "Russo One";
+  }
+
+  .button {
+    background-color:#E85251;
+    border: none;
+    color: white;
+    padding: 20px 45px;
+    text-align: center;
+    font-family: Russo One;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
+  .inputs div p{ 
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+    /* Não é necessário, ele aumenta as bordas de todos os cadastros e cor externo */
+  input:not([type="checkbox"]){
+    width: 50%;
+    margin-top: 4px;
+    padding: 10px;    
+    border: 1px solid #FFC1C1;
+    
+    display: grid;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    border:1px solid black;
+
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(226, 40, 40, 0.6) inset;
+    box-shadow: 0px 1px 4px 0px rgba(156, 31, 48, 0.6) inset;
+    
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+
+  body {
+    font-family: 'Russo One';
+  }
