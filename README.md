@@ -32,7 +32,7 @@ suas vendas.
 
 # Tecnologias utilizadas nesse projeto
 
-* Banco de dados SQLite.
+* Banco de dados Mysql 
 * [Figma](https://www.figma.com/) para protótipos.
 * [Desenvolvimento Ágil](https://www.desenvolvimentoagil.com.br/) como método de desenvovimento.
 
