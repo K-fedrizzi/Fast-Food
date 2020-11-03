@@ -1,0 +1,3 @@
+class Avaliacao{
+    private $valor;
+}
