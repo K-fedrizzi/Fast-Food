@@ -19,10 +19,17 @@ bem como e realizar pedidos. Os estabelecimentos podem cadastrar, editar
 ou remover comidas e definir promoções, gerenciando
 suas vendas.
 
-# Linguangens de Programação utilizadas
+# Linguangens de Programação utilizadas Back End
+
 
  * PHP
  * Javascript
+ 
+ # Linguangens de Programação utilizadas Font End
+
+ * BootsTrap 4 
+ * CSS
+ * HTML5
  
 
 # Referências
