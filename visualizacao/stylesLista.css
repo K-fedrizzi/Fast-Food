@@ -184,6 +184,12 @@ align-items: center;
   display: inline-flex;
   padding-right: 5px;
      }
+     /*****************************/
+     .estrelas label{
+        list-style-type: none;
+        display: inline-flex;
+        padding-right: 5px;
+           }
   .avaliacao .pontuacao  {
  
       display: grid;
@@ -338,9 +344,19 @@ align-items: center;
     .estrela{
         width: 30px;
         height: 30px;
-        filter:opacity(100%);
+      
+        
+    }
+  
+    .estrelaApagada{
+       
+        filter:opacity(50%);
     }
     .estrelas ul li button{
+        background-color: transparent;
+        border: transparent;
+    }
+    .myAvaliacao button{
         background-color: transparent;
         border: transparent;
     }
