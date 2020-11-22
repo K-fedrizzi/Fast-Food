@@ -49,8 +49,128 @@
      </div>
    </section>
    <section>
+       
        <ul>
-           <li>
+         <?php 
+        $nomeProduto="Pizza Frango Cremoso";
+        $nomeRestaurante="Pizzaria do Vizinho";
+        $descricao="Pizza saborosa e cremosa<br/>queijo, tomate, frango";
+        $pontuacao=4.5;
+        $valor=12;
+        $clienteComent=array(array("JOAO","Muito bom!"),array("vitor"," Vale a pena"));
+        
+        $minhaAvaliacao=3;
+
+         for($i=0;$i<5;$i++){?>
+            <div class="sect1">
+           <div class="item">          
+               <div class="imagem"><img src="imagens/pizza.png" alt="promo1"></div> 
+                <div class="info">
+                     <div class="titulo">  
+                             <div class="nomeProduto"><?php echo $nomeProduto ?></div>   
+                            <div class="nomeRestaurante"><?php  echo $nomeRestaurante ?></div>    
+                    <div id="descricaoTx" class="descricaoTx"><?php echo $descricao ?>
+                          
+                        <div class="btexp"><button  class="expandirBt" onclick="expandir(this.value)">Ler Mais</button></div>  
+                     </div> 
+                   
+                    <div class="descricao">  
+                        <div class="avaliacao">
+                         <div class="estrelas">
+                             <ul>
+                           
+                             
+                             <?php 
+                         
+                             for($j=0;$j<5;$j++){                            
+                                 ?>       <?php
+                                 $corEstrela="estrela";
+                                  if($j>=floor($pontuacao)){ ?> 
+                                    <li><img class ="estrela estrelaApagada" src="imagens/estrela.png" alt="*"> </li>
+                                  <?php  }else {?> 
+                                    <li><img class ="estrela" src="imagens/estrela.png" alt="*"> </li>
+                                     <?php } 
+                                                                   
+                              } ?>
+                             
+                             </ul>
+                         </div>
+                         <div class="pontuacao"><?php echo number_format(floor($pontuacao),1,'.','')  ?></div>
+                         <div class="avaliacaoBt"><button id="avaliacoesBt" class="avaliacoesBt" onclick="avaliacaoBt(this.value)">Avaliações</button></div>
+                        </div>  
+                       </div> 
+               </div> 
+                        
+                        
+                </div>
+            
+               <div class="compra">
+                   <div class="carrinho"><button><img src="imagens/carrinho.png" alt="carrinho"></button></div>
+                   <div class="promocao"><img src="imagens/promocao.png" alt="promoção"></div>
+                   <div class="preco"><?php echo 'R$' .number_format($valor,2,',','')  ?></div>
+                </div> 
+                
+           </div>
+         
+           <div id="avaliacaoTx" class="avaliacaoTx">
+               <div class="outrosUsuarios">
+                   <div class="minimizarAv"><button class=minimizarBt onclick="minimizarAvaliacao(this.value)">X</button></div>
+                   <div class="listaAvaliacao">Comentários:
+                       <ul>
+                       <?php 
+                         
+                               for($j=0; $j<count($clienteComent); $j++)   {               
+                           
+                             ?> 
+                               <li><div class="nomeLista"><?php echo $clienteComent[$j][0]; ?></div><div class="textoLista"><?php echo $clienteComent[$j][1]; ?></div></li>
+                                 <?php
+                               }                                
+                          ?>
+                      
+                      
+                   </ul>
+                </div>
+                   <div class="novoComentario">
+                       <div class="caixaInput"><div>Comente:</div><textarea class="comentario" rows="5" cols="10" maxlength="200" ></textarea> </div>
+                       <div class="enviar"><button class="btEnviar">Enviar</button></div>
+                   </div>
+               </div>
+               <div class="minhaAvaliacao">
+                   <div class="estrelas"><form><label class="myAvaliacao"><button class="estrelaMinhaAvaliacao" onclick="atualizarEstrela(this.value)"><img class ="estrela" src="imagens/estrela.png" alt="*"></button>
+                               </label>
+                               <label class="myAvaliacao"><button class="estrelaMinhaAvaliacao" onclick="atualizarEstrela(this.value)"><img class ="estrela" src="imagens/estrela.png" alt="*"></button>
+                               </label>
+                               <label class="myAvaliacao"><button class="estrelaMinhaAvaliacao" onclick="atualizarEstrela(this.value)"><img class ="estrela" src="imagens/estrela.png" alt="*"></button>
+                               </label>
+                               <label class="myAvaliacao"><button class="estrelaMinhaAvaliacao" onclick="atualizarEstrela(this.value)"><img class ="estrela" src="imagens/estrela.png" alt="*"></button>
+                               </label>
+                               <label class="myAvaliacao"><button class="estrelaMinhaAvaliacao" onclick="atualizarEstrela(this.value)"><img class ="estrela" src="imagens/estrela.png" alt="*"></button>
+                               </label></form>
+                 <!--   <ul class="myAvaliacao" value="--><?php /*echo $minhaAvaliacao ?>">
+                    <?php 
+                        
+                         for($j=0;$j<5;$j++){                            
+                             ?>       <?php
+                             $corEstrela="estrela";
+                              if($j>=floor($minhaAvaliacao)){ ?> 
+                               <li><button class="estrelaMinhaAvaliacao" onclick="atualizarEstrela(this.value)" value="<?php echo $val=$j+1;?>" ><img class ="estrela estrelaApagada" src="imagens/estrela.png" alt="*"></button></li>
+                               
+                              <?php  }else {?> 
+                                <li><button class="estrelaMinhaAvaliacao" onclick="atualizarEstrela(this.value)" value="<?php echo $val=$j+1;?>"><img class ="estrela" src="imagens/estrela.png" alt="*"></button></li>
+                               
+                                 <?php } 
+                                                               
+                          } ?>
+                       
+                    </ul>*/?><!--apagar -->
+                   </div>
+                   <div class="valorPontuacao"><?php echo number_format(floor($minhaAvaliacao),1,'.','') ?></div>
+               </div>
+           </div>         
+        </div>
+          <?php }?>
+
+          <!-- <li>
                <div class="sect1">
            <div class="item">          
                <div class="imagem"><img src="imagens/pizza.png" alt="promo1"></div> 
@@ -122,7 +242,7 @@
            </div>         
         </div>
     </li>
-    <li>
+   <li>
         <div class="sect1">
     <div class="item">          
         <div class="imagem"><img src="imagens/acai.jpg" alt="promo1"></div> 
@@ -194,7 +314,7 @@
         </div>
     </div>         
  </div>
-</li>
+</li>-->
     </ul>
         
        
