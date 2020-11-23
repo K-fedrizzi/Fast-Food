@@ -1,24 +1,27 @@
 <?php 
+
 include_once("Banco.php");
+
 class Cliente{
-    private $idCliente;//char(11)
+
     private $nome; //varchar
+    private $endereco;//varchar
     private $email;//varchar
     private $senha;//varchar
-    private $endereco;//varchar
-
    
-    function __construct(string $idCliente, string $nome, string $email, string $senha, string $endereco) {
-        $this->idCliente=$idCliente;
+    function __construct(string $nome, string $endereco, string $email, string $senha) {
         $this->nome = $nome;
-        $this->email = $email;
+        $this->endereco = $endereco;
+        $this->email=$email;
         $this->senha = hash('sha256', $senha);
-        $this->endereco=$endereco;
     }
     
+    // verifica se o email e a senha é igual ao que foi digitado
     public function igualEmail(string $email, string $senha) {
         return $this->email === $email && $this->senha === hash('sha256', $senha);
     }
+
+    // verifica se o id e senha são iguais aos que foram informados
     public function igualId(string $idCliente, string $senha) {
         return $this->idCliente === $idCliente && $this->senha === hash('sha256', $senha);
     }
@@ -28,13 +31,13 @@ class Cliente{
      *  Esta função não sobrescreve dados.
      */
     public function salvar() {
+
         $db = Banco::getInstance();
-        $stmt = $db->prepare('INSERT INTO Cliente  VALUES (:idCliente, :nome,:email, :senha, :endereco)');
-        $stmt->bindValue(':idCliente', $this->idCliente);
+        $stmt = $db->prepare('INSERT INTO Cliente (nome,endereco,email,senha)  VALUES (:nome, :endereco, :email, :senha)');
         $stmt->bindValue(':nome', $this->nome);
+        $stmt->bindValue(':endereco', $this->endereco);
         $stmt->bindValue(':email', $this->email);
         $stmt->bindValue(':senha', $this->senha);
-        $stmt->bindValue(':endereco', $this->endereco);
        
         $stmt->execute();
     }
@@ -45,17 +48,17 @@ class Cliente{
      * 
      * @return Cliente retorna ums instância de cliente
      */
-    public static function buscar(string $idCliente) {
+    public static function buscar(string $email) {
         $db = Banco::getInstance();
 
-        $stmt = $db->prepare('SELECT * FROM Cliente WHERE idCliente = :idCliente');
-        $stmt->bindValue(':idCliente', $idCliente);
+        $stmt = $db->prepare('SELECT * FROM Cliente WHERE email = :email');
+        $stmt->bindValue(':idCliente', $email);
         $stmt->execute();
 
         $resultado = $stmt->fetch();
 
         if ($resultado) {
-            $usuario = new Cliente($resultado['idCliente'], $resultado['nome'],$resultado['email'],$resultado['senha'],$resultado['endereco']);
+            $usuario = new Cliente($resultado['nome'],$resultado['endereco'],$resultado['email'],$resultado['senha']);
             $usuario->senha = $resultado['senha'];
             return $usuario;
         } else {

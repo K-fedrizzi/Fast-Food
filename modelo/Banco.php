@@ -22,9 +22,9 @@ final class Banco {
     *
     *  @return PDO conexão com o banco
     */
-    public static function getInstance() {
+    public static function getInstance() : PDO {
         if (is_null(self::$conexao)) {
-            self::$conexao = new PDO('sqlite:login.sqlite3');
+            self::$conexao = new PDO('sqlite:restaurante_database.sqlite3');
             self::$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
         }
@@ -36,94 +36,100 @@ final class Banco {
     */
     public static function createSchema() {
         $db = self::getInstance();
-        $db->exec('
-        CREATE TABLE IF NOT EXISTS Cliente (
-            idCliente CHAR(11) NOT NULL,
-            nome VARCHAR(45) NOT NULL,
-            senha VARCHAR(45) NOT NULL,
-            email VARCHAR(45) NULL,
-            endereco VARCHAR(45) NULL,
-            PRIMARY KEY (idCliente));
+        $db->exec(  "  CREATE TABLE IF NOT EXISTS Cliente (
+                       idCliente INTEGER PRIMARY KEY AUTOINCREMENT,
+                       nome VARCHAR(45) NOT NULL,
+                       endereco VARCHAR(45) NOT NULL,
+                       email VARCHAR(45) NULL,
+                       senha VARCHAR(45) NOT NULL
+                   );
 
-        CREATE TABLE IF NOT EXISTS Empresa (
-            idEmpresa CHAR(14) NOT NULL,
-            nome_empresa VARCHAR(45) NOT NULL,
-            endereco_empresa VARCHAR(45) NULL,
-            PRIMARY KEY (idEmpresa));
+                   CREATE TABLE IF NOT EXISTS Empresa (
+                       idEmpresa INTEGER PRIMARY KEY AUTOINCREMENT,
+                       nome VARCHAR(45) NOT NULL,
+                       endereco VARCHAR(45) NOT NULL,
+                       email VARCHAR(45) NULL,
+                       senha VARCHAR(45) NULL
+                   );
 
-        CREATE TABLE IF NOT EXISTS Produto (
-                idProduto INT NOT NULL,
-                nome_produto VARCHAR(45) NOT NULL,
-                descricao TEXT NULL,
-                valor DECIMAL NOT NULL,
-                valorDesconto DECIMAL NULL,
-                empresa_idEmpresa CHAR(14) NOT NULL,
-                PRIMARY KEY (idProduto),
-                CONSTRAINT fk_produto_empresa
-                  FOREIGN KEY (empresa_idEmpresa)
-                  REFERENCES Empresa (idEmpresa)
-                  ON DELETE NO ACTION
-                  ON UPDATE NO ACTION);
-                  
-        CREATE TABLE IF NOT EXISTS cliente_compra_items (
-            idCompra INT NOT NULL,
-            fk_idCliente CHAR(11) NOT NULL,
-           dataCompra TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-            PRIMARY KEY (idCompra,fk_idCliente),
-                CONSTRAINT fk_Cliente_idCliente
-                FOREIGN KEY (fk_idCliente)
-                REFERENCES Cliente (idCliente)
-                ON DELETE NO ACTION
-                ON UPDATE NO ACTION);
+                   CREATE TABLE IF NOT EXISTS Produto (
+                       idProduto INT NOT NULL,
+                       nome_produto VARCHAR(45) NOT NULL,
+                       descricao TEXT NULL,
+                       valor DECIMAL NOT NULL,
+                       valorDesconto DECIMAL NULL,
+                       empresa_idEmpresa INTEGER NOT NULL,
+                       PRIMARY KEY (idProduto),
+                       CONSTRAINT fk_produto_empresa
+                       FOREIGN KEY (empresa_idEmpresa)
+                       REFERENCES Empresa (idEmpresa)
+                       ON DELETE NO ACTION
+                       ON UPDATE NO ACTION
+                   );
 
-        CREATE TABLE IF NOT EXISTS compra_item_produto (
-            fk_idCompra INT NOT NULL,
-            fk_idproduto INT NOT NULL,
-            quantidade INT NOT NULL,
-            preco DECIMAL NOT NULL,
-            PRIMARY KEY (fk_idCompra, fk_idproduto),
-                        CONSTRAINT fk_compra_idCompra
-                        FOREIGN KEY (fk_idCompra)
-                        REFERENCES cliente_compra_items (idCompra)
-                        ON DELETE NO ACTION
-                        ON UPDATE NO ACTION,
-                        CONSTRAINT fk_Produto_idProduto
-                        FOREIGN KEY (fk_idproduto)
-                        REFERENCES Produto (idProduto)
-                        ON DELETE NO ACTION
-                        ON UPDATE NO ACTION);
+                   CREATE TABLE IF NOT EXISTS cliente_compra_items (
+                       idCompra INT NOT NULL,
+                       fk_idCliente INTEGER NOT NULL,
+                       dataCompra TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+                       PRIMARY KEY (idCompra,fk_idCliente),
+                       CONSTRAINT fk_Cliente_idCliente
+                       FOREIGN KEY (fk_idCliente)
+                       REFERENCES Cliente (idCliente)
+                       ON DELETE NO ACTION
+                       ON UPDATE NO ACTION
+                   );
 
-        CREATE TABLE IF NOT EXISTS cliente_avaliacao_produto (
-            cliente_idCliente CHAR(11) NOT NULL,
-            produto_idProduto INT NOT NULL,
-            valorAvaliacao INT NOT NULL,
-            PRIMARY KEY (cliente_idCliente, produto_idProduto),
-            CONSTRAINT fk_cliente_has_produto_cliente
-              FOREIGN KEY (cliente_idCliente)
-              REFERENCES Cliente (idCliente)
-              ON DELETE NO ACTION
-              ON UPDATE NO ACTION,
-            CONSTRAINT fk_cliente_has_produto_produto
-              FOREIGN KEY (produto_idProduto)
-              REFERENCES Produto (idProduto)
-              ON DELETE NO ACTION
-              ON UPDATE NO ACTION);
+                   CREATE TABLE IF NOT EXISTS compra_item_produto (
+                       fk_idCompra INT NOT NULL,
+                       fk_idproduto INT NOT NULL,
+                       quantidade INT NOT NULL,
+                       preco DECIMAL NOT NULL,
+                       PRIMARY KEY (fk_idCompra, fk_idproduto),
+                       CONSTRAINT fk_compra_idCompra
+                       FOREIGN KEY (fk_idCompra)
+                       REFERENCES cliente_compra_items (idCompra)
+                       ON DELETE NO ACTION
+                       ON UPDATE NO ACTION,
+                       CONSTRAINT fk_Produto_idProduto
+                       FOREIGN KEY (fk_idproduto)
+                       REFERENCES Produto (idProduto)
+                       ON DELETE NO ACTION
+                       ON UPDATE NO ACTION
+                   );
 
-        CREATE TABLE IF NOT EXISTS Comentario (
-            idComentario INT AUTO_INCREMENT,
-            texto TEXT NULL,
-            produto_idProduto INT NOT NULL,
-            cliente_idCliente CHAR(11) NOT NULL,
-            PRIMARY KEY (idComentario),
-            CONSTRAINT fk_comentario_produto
-            FOREIGN KEY (produto_idProduto)
-            REFERENCES Produto (idProduto)
-            ON UPDATE NO ACTION,
-            CONSTRAINT fk_comentario_cliente
-                  FOREIGN KEY (cliente_idcliente)
-                  REFERENCES Cliente (idCliente)
-                  ON DELETE NO ACTION
-                  ON UPDATE NO ACTION)');
+                   CREATE TABLE IF NOT EXISTS cliente_avaliacao_produto (
+                       cliente_idCliente INTEGER NOT NULL,
+                       produto_idProduto INT NOT NULL,
+                       valorAvaliacao INT NOT NULL,
+                       PRIMARY KEY (cliente_idCliente, produto_idProduto),
+                       CONSTRAINT fk_cliente_has_produto_cliente
+                       FOREIGN KEY (cliente_idCliente)
+                       REFERENCES Cliente (idCliente)
+                       ON DELETE NO ACTION
+                       ON UPDATE NO ACTION,
+                       CONSTRAINT fk_cliente_has_produto_produto
+                       FOREIGN KEY (produto_idProduto)
+                       REFERENCES Produto (idProduto)
+                       ON DELETE NO ACTION
+                       ON UPDATE NO ACTION
+                   );
+
+                   CREATE TABLE IF NOT EXISTS Comentario (
+                       idComentario INT AUTO_INCREMENT,
+                       texto TEXT NULL,
+                       produto_idProduto INT NOT NULL,
+                       cliente_idCliente INTEGER NOT NULL,
+                       PRIMARY KEY (idComentario),
+                       CONSTRAINT fk_comentario_produto
+                       FOREIGN KEY (produto_idProduto)
+                       REFERENCES Produto (idProduto)
+                       ON UPDATE NO ACTION,
+                       CONSTRAINT fk_comentario_cliente
+                       FOREIGN KEY (cliente_idcliente)
+                       REFERENCES Cliente (idCliente)
+                       ON DELETE NO ACTION
+                       ON UPDATE NO ACTION ) "
+        );
     }
 }
 
