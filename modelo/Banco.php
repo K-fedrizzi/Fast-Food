@@ -43,7 +43,6 @@ final class Banco {
                        email VARCHAR(45) NULL,
                        senha VARCHAR(45) NOT NULL
                    );
-
                    CREATE TABLE IF NOT EXISTS Empresa (
                        idEmpresa INTEGER PRIMARY KEY AUTOINCREMENT,
                        nome VARCHAR(45) NOT NULL,
@@ -51,7 +50,6 @@ final class Banco {
                        email VARCHAR(45) NULL,
                        senha VARCHAR(45) NULL
                    );
-
                    CREATE TABLE IF NOT EXISTS Produto (
                        idProduto INT NOT NULL,
                        nome_produto VARCHAR(45) NOT NULL,
@@ -66,7 +64,6 @@ final class Banco {
                        ON DELETE NO ACTION
                        ON UPDATE NO ACTION
                    );
-
                    CREATE TABLE IF NOT EXISTS cliente_compra_items (
                        idCompra INT NOT NULL,
                        fk_idCliente INTEGER NOT NULL,
@@ -78,7 +75,6 @@ final class Banco {
                        ON DELETE NO ACTION
                        ON UPDATE NO ACTION
                    );
-
                    CREATE TABLE IF NOT EXISTS compra_item_produto (
                        fk_idCompra INT NOT NULL,
                        fk_idproduto INT NOT NULL,
@@ -96,9 +92,8 @@ final class Banco {
                        ON DELETE NO ACTION
                        ON UPDATE NO ACTION
                    );
-
                    CREATE TABLE IF NOT EXISTS cliente_avaliacao_produto (
-                       cliente_idCliente INTEGER NOT NULL,
+                       cliente_idCliente INT NOT NULL,
                        produto_idProduto INT NOT NULL,
                        valorAvaliacao INT NOT NULL,
                        PRIMARY KEY (cliente_idCliente, produto_idProduto),
@@ -113,7 +108,6 @@ final class Banco {
                        ON DELETE NO ACTION
                        ON UPDATE NO ACTION
                    );
-
                    CREATE TABLE IF NOT EXISTS Comentario (
                        idComentario INT AUTO_INCREMENT,
                        texto TEXT NULL,
