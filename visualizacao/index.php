@@ -17,6 +17,8 @@ include_once '.\..\modelo\Cliente.php';
 include_once '.\..\modelo\Empresa.php';
 include_once '.\..\modelo\Produto.php';
 include_once '.\..\modelo\Cliente_avaliacao_produto.php';
+include_once '.\..\modelo\Comentario.php';
+
 /**
  * Cria um banco de dados para o projeto
  */
@@ -70,6 +72,38 @@ $avaliacao= new Cliente_avaliacao_produto(2,3,1);
 $avaliacao->salvar();
 $avaliacao= new Cliente_avaliacao_produto(2,4,5);
 $avaliacao->salvar();
+
+//comentários em produtos
+$comentario= new Comentario(0,"Valeu a pena!",1,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Gostei demais!",1,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Também adorei!",1,2);
+$comentario->salvar();
+
+$comentario= new Comentario(0,"Mediano",2,2);
+$comentario->salvar();
+$comentario= new Comentario(0,"É, dá para melhorar!",2,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Concordo!",2,2);
+$comentario->salvar();
+
+
+$comentario= new Comentario(0,"Nao gostei muito!",3,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Pouco sabor",3,1);
+$comentario->salvar();
+
+
+$comentario= new Comentario(0,"Achei gostoso",4,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Sério?",4,2);
+$comentario->salvar();
+$comentario= new Comentario(0,"Aham",4,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Vou comprar!",4,2);
+$comentario->salvar();
+
 ?>
             <header id="topo">
                 <nav>
