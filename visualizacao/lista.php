@@ -18,6 +18,7 @@ include_once '.\..\modelo\Cliente.php';
 include_once '.\..\modelo\Empresa.php';
 include_once '.\..\modelo\Produto.php';
 include_once '.\..\modelo\Cliente_avaliacao_produto.php';
+include_once '.\..\modelo\Comentario.php';
 /**
  * Cria um banco de dados para o projeto
  */
@@ -100,21 +101,19 @@ $produtos=Produto::buscarProdutos();
                     <div class="descricao">  
                         <div class="avaliacao">
                          <div class="estrelas">
-                             <ul>
-                           
-                             
+                             <ul> 
                              <?php 
-                         $pontuacao=Cliente_avaliacao_produto::buscarMediaProduto($produto->idProduto);
-                             for($j=0;$j<5;$j++){                            
-                                 ?>       <?php
-                                 $corEstrela="estrela";
-                                  if($j>=floor($pontuacao)){ ?> 
-                                    <li><img class ="estrela estrelaApagada" src="imagens/estrela.png" alt="*"> </li>
-                                  <?php  }else {?> 
-                                    <li><img class ="estrela" src="imagens/estrela.png" alt="*"> </li>
-                                     <?php } 
-                                                                   
-                              } ?>
+                                $pontuacao=Cliente_avaliacao_produto::buscarMediaProduto($produto->idProduto);
+                                    for($j=0;$j<5;$j++){                            
+                                        ?>       <?php
+                                        $corEstrela="estrela";
+                                        if($j>=floor($pontuacao)){ ?> 
+                                            <li><img class ="estrela estrelaApagada" src="imagens/estrela.png" alt="*"> </li>
+                                        <?php  }else {?> 
+                                            <li><img class ="estrela" src="imagens/estrela.png" alt="*"> </li>
+                                            <?php } 
+                                                                        
+                                    } ?>
                              
                              </ul>
                          </div>
@@ -141,11 +140,11 @@ $produtos=Produto::buscarProdutos();
                    <div class="listaAvaliacao">Comentários:
                        <ul>
                        <?php 
-                         
-                               for($j=0; $j<count($clienteComent); $j++)   {               
-                           
+                         $comentarios=Comentario::buscarTodos($produto->idProduto);
+                               foreach($comentarios as $comentario)   {               
+                                $cliente=Cliente::buscarPorId($comentario->cliente_idCliente);
                              ?> 
-                               <li><div class="nomeLista"><?php echo $clienteComent[$j][0]; ?></div><div class="textoLista"><?php echo $clienteComent[$j][1]; ?></div></li>
+                               <li><div class="nomeLista"><?php echo $cliente->nome; ?></div><div class="textoLista"><?php echo $comentario->texto; ?></div></li>
                                  <?php
                                }                                
                           ?>
