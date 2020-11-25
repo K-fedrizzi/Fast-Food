@@ -109,17 +109,17 @@ final class Banco {
                        ON UPDATE NO ACTION
                    );
                    CREATE TABLE IF NOT EXISTS Comentario (
-                       idComentario INT AUTO_INCREMENT,
+                       idComentario  INTEGER PRIMARY KEY AUTOINCREMENT,
                        texto TEXT NULL,
                        produto_idProduto INT NOT NULL,
-                       cliente_idCliente INTEGER NOT NULL,
-                       PRIMARY KEY (idComentario),
+                       cliente_idCliente INT NOT NULL,
                        CONSTRAINT fk_comentario_produto
                        FOREIGN KEY (produto_idProduto)
                        REFERENCES Produto (idProduto)
+                       ON DELETE NO ACTION
                        ON UPDATE NO ACTION,
                        CONSTRAINT fk_comentario_cliente
-                       FOREIGN KEY (cliente_idcliente)
+                       FOREIGN KEY (cliente_idCliente)
                        REFERENCES Cliente (idCliente)
                        ON DELETE NO ACTION
                        ON UPDATE NO ACTION ) "

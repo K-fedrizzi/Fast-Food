@@ -16,6 +16,9 @@ class Cliente{
         $this->senha = hash('sha256', $senha);
     }
     
+    public function __get($campo) {
+        return $this->$campo;
+    }
     // verifica se o email e a senha é igual ao que foi digitado
     public function igualEmail(string $email, string $senha) {
         return $this->email === $email && $this->senha === hash('sha256', $senha);
@@ -52,7 +55,30 @@ class Cliente{
         $db = Banco::getInstance();
 
         $stmt = $db->prepare('SELECT * FROM Cliente WHERE email = :email');
-        $stmt->bindValue(':idCliente', $email);
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+
+        if ($resultado) {
+            $usuario = new Cliente($resultado['nome'],$resultado['endereco'],$resultado['email'],$resultado['senha']);
+            $usuario->senha = $resultado['senha'];
+            return $usuario;
+        } else {
+            return NULL;
+        }
+    }
+    /**
+     * Função estática, pois não depende do estado de uma instância,
+     * para buscar um cliente no banco.
+     * 
+     * @return Cliente retorna ums instância de cliente buscando pelo id
+     */
+    public static function buscarPorId(int $idCliente) {
+        $db = Banco::getInstance();
+
+        $stmt = $db->prepare('SELECT nome, endereco, email, senha FROM Cliente WHERE idCliente = :idCliente');
+        $stmt->bindValue(':idCliente', $idCliente);
         $stmt->execute();
 
         $resultado = $stmt->fetch();

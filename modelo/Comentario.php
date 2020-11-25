@@ -7,13 +7,26 @@ class Comentario{
     private $produto_idProduto;//int
     private $cliente_idCliente;//char(11)
 
-    function __construct(int $idComentario, string $texto, int $produto_idProduto, string $cliente_idCliente) {
+    function __construct(int $idComentario, string $texto, int $produto_idProduto, int $cliente_idCliente) {
         $this->idComentario=$idComentario;
         $this->texto = $texto;
         $this->produto_idProduto = $produto_idProduto;
         $this->cliente_idCliente = $cliente_idCliente;
     }
     
+    /**
+    *  Método mágico para acessar todos os campos
+    */
+    public function __get($campo) {
+        return $this->$campo;
+    }
+
+    /**
+    *  Método mágico para modificar todos os campos
+    */
+    public function __set($campo, $valor) {
+        return $this->$campo = $valor;
+    }
 
 
     /**
@@ -22,13 +35,14 @@ class Comentario{
      */
     public function salvar() {
         $db = Banco::getInstance();
-        $stmt = $db->prepare('INSERT INTO Comentario  VALUES (:idComentario, :texto,:produto_idProduto, :cliente_idCliente)');
-        $stmt->bindValue(':idComentario', $this->idComentario);
+        $stmt = $db->prepare('INSERT INTO Comentario (texto, produto_idProduto, cliente_idCliente)  VALUES (:texto,:produto_idProduto, :cliente_idCliente)');
+    
         $stmt->bindValue(':texto', $this->texto);
         $stmt->bindValue(':produto_idProduto', $this->produto_idProduto);
         $stmt->bindValue(':cliente_idCliente', $this->cliente_idCliente);
        
         $stmt->execute();
+       
     }
 
      /**
@@ -55,19 +69,20 @@ class Comentario{
         }
 
     }
-   /* public static function buscarTodos(int $idProduto) {
+   public static function buscarTodos(int $idProduto) {
         $db = Banco::getInstance();
- $stmt= $db->prepare('SELECT * FROM Comentario WHERE produto_idProduto == :idProduto');
- $stmt->bindValue(':idProduto', $idProduto);
- $stmt->fetchAll();
+        $text='SELECT * FROM Comentario WHERE produto_idProduto == ' .$idProduto;
+ $stmt= $db->query($text)->fetchAll();
+ 
 $comentarios=array();
           foreach($stmt as $resultado){
     $comentario= new  Comentario($resultado['idComentario'], $resultado['texto'],$resultado['produto_idProduto'],$resultado['cliente_idCliente']);
     array_push($comentarios,$comentario);
           }
+          
  return $comentarios;
       
 
-    }*/
+    }
 }
 ?>
