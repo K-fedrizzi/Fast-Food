@@ -14,7 +14,7 @@ class Empresa{
         $this->nome = $nome;
         $this->endereco = $endereco;
         $this->email = $email;
-        $this->senha = hash('sha256', $senha);
+        $this->senha = $senha;
     }
 
     /**
@@ -38,7 +38,7 @@ class Empresa{
     *   @return bool Retorna TRUE se igual, senão FALSE
     */
     public function igual(string $email, string $senha) {
-        return $this->email === $email && $this->senha === hash('sha256', $senha);
+        return $this->email === $email && $this->senha === $senha;
     }
      /**
      *  Função que salva os dados de uma empresa no banco.

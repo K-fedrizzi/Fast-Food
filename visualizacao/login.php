@@ -5,29 +5,37 @@
     <meta charset="UTF-8">
     <title> Login </title>
     <link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
-    <link href="estilo.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript" src="login.js" defer></script>
 </head>
 
 <body>
-    <div class="btSair"><a href="inicial.html"> Sair</a> </div>
 
-    <div>
-        <h1 class="titulo1">
-            Fast Food </h1>
+<header id="topo">
+        <nav>
+            <div class="logo"> <a href="#"><img src="imagens/pratoheader.png" /></a></div>
 
-        <h1 class="titulo2">
-            Delicious </h1>
-    </div>
+            <div>
+                <h1 class="titulo1">
+                    Fast Food </h1>
+                <h1 class="titulo2">
+                    Delicious</h1>
+            </div>
 
-    <div class="container">
-
-
-        <div class="content">
+            <div class="menu">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="cadastro_empresa.php">Empresa</a></li>
+                    <li><a href="cadastro.php">Cliente</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
             <div id="login">
-                <form method="post" action="">
-                    <h3> Bem vindo de volta!</h3>
+
+                <form method="post" action="\login.php">
+                  
                     <p>
 
                         <input id="email_login" name="email_login" required="required" type="text"
@@ -46,20 +54,41 @@
 
                     <p>
                     <div class="Entrar">
-                        <a id="link" href="lista.php"> <button class="button" type="submit"
-                                onclick="login()">Entrar</button></a>
+                        <button class="button" type="submit" onclick="login()">Entrar</button>
                     </div>
-                    </p>
-
-                    <div class="Link">
-                        <p class="link">
-                            Não possui conta?
-                            <a href="cadastro.php">Cadastre-se já</a>
-                        </p>
-                    </div>
-                    
                 </form>
+
+                </p>
+                <div class="Link">
+                    <p class="link">
+                        Não possui conta?
+                        <a href="cadastro.php">Cadastre-se já</a>
+                    </p>
+                </div>
             </div>
+
+            <?php
+                 include_once '.\..\modelo\Cliente.php';
+                 if(isset( $_POST['email_login']) && isset($_POST['senha_login'])){
+
+                    $r = Cliente::autenticarUsuario($_POST['email_login'],$_POST['senha_login']);
+                 
+                    if ( $r == true){
+  
+                        // Criar Sessão
+                        session_start();
+                        $_SESSION['usuario'] = $_POST['email_login'];
+                      
+                        // Chama a proxima página
+                        require('C:\Users\Emerson_Costa\Desktop\trabalho_progweb\visualizacao\lista.php');
+  
+                    } else {
+                        echo  "<script>alert('Usuario ou Senha Incorretos!');</script>";
+                    }
+                 }
+                 
+                  
+            ?>
 
 </body>
 
