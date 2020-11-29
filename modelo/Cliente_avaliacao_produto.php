@@ -49,10 +49,10 @@ function __construct(int $cliente_idCliente, int $produto_idProduto, int $valorA
      * 
      * @return Cliente_avaliacao_produto retorna ums instância de avaliacao de um cliente em determinado produto
      */
-    public static function buscar(string $cliente_idCliente,int $produto_idProduto) {
+    public static function buscar(int $cliente_idCliente,int $produto_idProduto) {
         $db = Banco::getInstance();
 
-        $stmt = $db->prepare('SELECT * FROM cliente_compra_produto WHERE cliente_idCliente == :cliente_idCliente AND produto_idProduto == :produto_idProduto' );
+        $stmt = $db->prepare('SELECT * FROM cliente_avaliacao_produto WHERE cliente_idCliente == :cliente_idCliente AND produto_idProduto == :produto_idProduto' );
         $stmt->bindValue(':cliente_idCliente', $cliente_idCliente);
         $stmt->bindValue(':produto_idProduto', $produto_idProduto);
         $stmt->execute();
@@ -64,7 +64,7 @@ function __construct(int $cliente_idCliente, int $produto_idProduto, int $valorA
 
             return $avaliacao;
         } else {
-            return NULL;
+            return null;
         }
 
     }
