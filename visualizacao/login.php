@@ -80,7 +80,8 @@
                         $_SESSION['usuario'] = $_POST['email_login'];
                       
                         // Chama a proxima página
-                        require('C:\Users\Emerson_Costa\Desktop\trabalho_progweb\visualizacao\lista.php');
+                     //   require('C:\Users\Emerson_Costa\Desktop\trabalho_progweb\visualizacao\lista.php');
+                          require('.\lista.php');//usei isso para acessar a pagina dentro da pasta
   
                     } else {
                         echo  "<script>alert('Usuario ou Senha Incorretos!');</script>";
