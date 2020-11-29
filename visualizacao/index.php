@@ -1,3 +1,97 @@
+
+    <?php /* Acesso aos modelos necesários para inclusao de alguns dados. Deve retirar o comentário
+
+include_once '.\..\modelo\Banco.php';
+include_once '.\..\modelo\Cliente.php';
+include_once '.\..\modelo\Empresa.php';
+include_once '.\..\modelo\Produto.php';
+include_once '.\..\modelo\Cliente_avaliacao_produto.php';
+include_once '.\..\modelo\Comentario.php';
+
+ // Cria um banco de dados para o projeto
+ 
+try{
+
+    Banco::createSchema();
+    
+} catch (\Throwable $th) {
+    echo $th;
+    die(1);
+}
+
+// testando dados para cliente
+$cliente = new Cliente(0,"Carlos Augusto","Rua teste","teste@gmail.com","123456");
+$cliente->salvar();
+
+$cliente2 = new Cliente(0,"Joseph Pinto","Rua teste2","teste2@gmail.com","1234567");
+$cliente2->salvar();
+
+// testando dados para Empresa
+$empresa = new Empresa("Pao Dhora","Rua teste","teste@gmail.com","123456");
+$empresa->salvar();
+
+$empresa2 = new Empresa("Sorvete CIA","Rua teste2","teste2@gmail.com","123456");
+$empresa2->salvar();
+
+//produto
+$produto= new Produto(1,"Esfiha","Esfiha de carne e de frango;", (float)15,  (float)0,"1");
+$produto->salvar();
+$produto= new Produto(2,"Pão Francês","Pão quentinho da hora;",  (float)11,  (float)0,"1");
+$produto->salvar();
+$produto= new Produto(3,"Moreninha","Moreninha de baunilha.",  (float)15, (float) 0,"2");
+$produto->salvar();
+$produto= new Produto(4,"Picolé","Picolé de Frutas.", (float) 11,  (float)0,"2");
+$produto->salvar();
+
+//avaliacao de produto
+$avaliacao= new Cliente_avaliacao_produto(1,1,4);
+$avaliacao->salvar();
+$avaliacao= new Cliente_avaliacao_produto(1,2,3);
+$avaliacao->salvar();
+$avaliacao= new Cliente_avaliacao_produto(1,3,2);
+$avaliacao->salvar();
+$avaliacao= new Cliente_avaliacao_produto(1,4,5);
+$avaliacao->salvar();
+$avaliacao= new Cliente_avaliacao_produto(2,1,3);
+$avaliacao->salvar();
+$avaliacao= new Cliente_avaliacao_produto(2,2,2);
+$avaliacao->salvar();
+$avaliacao= new Cliente_avaliacao_produto(2,3,1);
+$avaliacao->salvar();
+$avaliacao= new Cliente_avaliacao_produto(2,4,5);
+$avaliacao->salvar();
+//comentários em produtos
+$comentario= new Comentario(0,"Valeu a pena!",1,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Gostei demais!",1,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Também adorei!",1,2);
+$comentario->salvar();
+
+$comentario= new Comentario(0,"Mediano",2,2);
+$comentario->salvar();
+$comentario= new Comentario(0,"É, dá para melhorar!",2,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Concordo!",2,2);
+$comentario->salvar();
+
+
+$comentario= new Comentario(0,"Nao gostei muito!",3,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Pouco sabor",3,1);
+$comentario->salvar();
+
+
+$comentario= new Comentario(0,"Achei gostoso",4,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Sério?",4,2);
+$comentario->salvar();
+$comentario= new Comentario(0,"Aham",4,1);
+$comentario->salvar();
+$comentario= new Comentario(0,"Vou comprar!",4,2);
+$comentario->salvar();
+*/
+?>
 <!DOCTYPE html>
 <html>
 
