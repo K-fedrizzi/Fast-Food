@@ -75,7 +75,7 @@
         include_once '.\..\modelo\Cliente.php';
 
         if(isset($_POST["nome_cliente"]) && isset($_POST["endereco_cliente"]) && isset( $_POST["email_cliente"]) && isset($_POST["senha_cliente"])){
-            $cliente = new Cliente($_POST["nome_cliente"], $_POST["endereco_cliente"], $_POST["email_cliente"], $_POST["senha_cliente"]);
+            $cliente = new Cliente(0,$_POST["nome_cliente"], $_POST["endereco_cliente"], $_POST["email_cliente"], $_POST["senha_cliente"]);
             $cliente->salvar();
             echo  "<script>alert('Cadastro Realizado Com Suscesso!');</script>";
         }
