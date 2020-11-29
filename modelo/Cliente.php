@@ -3,17 +3,19 @@
 include_once("Banco.php");
 
 class Cliente{
-
+    private $idCliente;
     private $nome; //varchar
     private $endereco;//varchar
     private $email;//varchar
     private $senha;//varchar
    
-    function __construct(string $nome, string $endereco, string $email, string $senha) {
+    function __construct(int $idCliente, string $nome, string $endereco, string $email, string $senha) {
         $this->nome = $nome;
         $this->endereco = $endereco;
         $this->email=$email;
         $this->senha = $senha;
+        $this->idCliente = $idCliente;
+       // $this->senha = hash('sha256', $senha);
     }
     
     public function __get($campo) {
@@ -22,14 +24,15 @@ class Cliente{
     // verifica se o email e a senha é igual ao que foi digitado
     public function igualEmail(string $email, string $senha) {
         return $this->email === $email && $this->senha === $senha;
+        //return $this->email === $email && $this->senha === hash('sha256', $senha);
     }
 
     // verifica se o id e senha são iguais aos que foram informados
     public function igualId(string $idCliente, string $senha) {
         return $this->idCliente === $idCliente && $this->senha === $senha;
+      //  return $this->idCliente === $idCliente && $this->senha === hash('sha256', $senha);
     }
 
-    
     /**
      *  Função que salva os dados de um cliente no banco.
      *  Esta função não sobrescreve dados.
@@ -62,7 +65,7 @@ class Cliente{
         $resultado = $stmt->fetch();
 
         if ($resultado) {
-            $usuario = new Cliente($resultado['nome'],$resultado['endereco'],$resultado['email'],$resultado['senha']);
+            $usuario = new Cliente($resultado ['idCliente'],$resultado['nome'],$resultado['endereco'],$resultado['email'],$resultado['senha']);
             $usuario->senha = $resultado['senha'];
             return $usuario;
         } else {
@@ -78,23 +81,23 @@ class Cliente{
     public static function buscarPorId(int $idCliente) {
         $db = Banco::getInstance();
 
-        $stmt = $db->prepare('SELECT nome, endereco, email, senha FROM Cliente WHERE idCliente = :idCliente');
+        $stmt = $db->prepare('SELECT idCliente, nome, endereco, email, senha FROM Cliente WHERE idCliente = :idCliente');
         $stmt->bindValue(':idCliente', $idCliente);
         $stmt->execute();
 
         $resultado = $stmt->fetch();
 
         if ($resultado) {
-            $usuario = new Cliente($resultado['nome'],$resultado['endereco'],$resultado['email'],$resultado['senha']);
+            $usuario = new Cliente($resultado ['idCliente'], $resultado['nome'],$resultado['endereco'],$resultado['email'],$resultado['senha']);
             $usuario->senha = $resultado['senha'];
             return $usuario;
         } else {
             return NULL;
         }
 
+        
     }
-    
-    /**
+     /**
      * Metodo para autenticar usuário e senha 
      * @return
      */
@@ -108,9 +111,9 @@ class Cliente{
         $resultado = $stmt->fetch();
 
         if ($resultado['email'] === $email && $resultado['senha'] === $senha) {
-        
+
             return true;
-            
+
         } else {
 
             return false;
