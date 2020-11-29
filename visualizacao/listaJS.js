@@ -46,3 +46,21 @@ caixaText[a].style.display="none";
 
 }
 
+
+function atualizarEstrela(value, idProduto, sequenciaProduto){
+
+
+ var atualizado= document.getElementsByClassName("minhaAvaliacao")[sequenciaProduto].getElementsByClassName("estrelas")
+ [0].getElementsByTagName("button");
+  for(i=0;i<5;i++){
+    if(i+1>value){
+atualizado[i].innerHTML=' <img class ="estrela estrelaApagada" src="imagens/estrela.png" alt="*">';
+    }
+    if(i+1<=value){
+      atualizado[i].innerHTML=' <img class ="estrela" src="imagens/estrela.png" alt="*">';
+          }
+
+}
+var valor =document.getElementsByClassName("minhaAvaliacao")[sequenciaProduto].getElementsByClassName("valorPontuacao");
+valor[0].innerHTML=""+value;  
+}
