@@ -69,7 +69,7 @@ public function nome(){
     }
      public static function buscarProdutos() {
         $db = Banco::getInstance();
- $stmt= $db->query('SELECT * FROM Produto')->fetchAll();
+ $stmt= $db->query('SELECT * FROM Produto ORDER BY nome_produto')->fetchAll();
 
 $produtos=array();
           foreach($stmt as $resultado){
