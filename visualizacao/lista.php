@@ -37,12 +37,16 @@ try{
 $produtos=Produto::buscarProdutos();
 //Cria a instancia do usuário que está logado no momento através do Post
 $clienteAtual=null;
+session_start();
+
 if (!isset($_SESSION['usuario'])){
-    header("location: login.php");
+    
+    header("Location: login.php");
+    
   }else if(isset($_SESSION['usuario'])){
    
-        $clienteAtual = Cliente::buscar($_POST['email_login']);
-    
+        $clienteAtual = Cliente::buscar($_SESSION['usuario']);
+        
   }
 ?> 
 
