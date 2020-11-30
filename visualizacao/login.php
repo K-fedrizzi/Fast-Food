@@ -34,7 +34,7 @@
 
             <div id="login">
 
-                <form method="post" action="\login.php">
+                <form method="post" action=".\login.php">
                   
                     <p>
 
