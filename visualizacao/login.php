@@ -81,7 +81,7 @@
                       
                         // Chama a proxima página
                      //   require('C:\Users\Emerson_Costa\Desktop\trabalho_progweb\visualizacao\lista.php');
-                          require('.\lista.php');//usei isso para acessar a pagina dentro da pasta
+                          header('Location: lista.php');//use isso para acessar a pagina dentro da pasta
   
                     } else {
                         echo  "<script>alert('Usuario ou Senha Incorretos!');</script>";
