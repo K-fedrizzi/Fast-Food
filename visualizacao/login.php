@@ -54,7 +54,7 @@
 
                     <p>
                     <div class="Entrar">
-                        <button class="button" type="submit" onclick="login()">Entrar</button>
+                        <button class="button" type="submit" >Entrar</button>
                     </div>
                 </form>
 
