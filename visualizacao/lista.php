@@ -8,6 +8,7 @@
         <meta charset="UTF-8">
         <link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
          <link rel="stylesheet" type="text/css" href="stylesLista.css" />
+         <link rel="stylesheet" type="text/css" href="styles.css" />
         
         <title>Lista</title>
         <script type="text/javascript" src="listaJS.js" defer></script>
@@ -51,25 +52,24 @@ if (!isset($_SESSION['usuario'])){
 ?> 
 
 <!--topo da página com menu -->
-            <header id="topo">
-                <nav>
-                    <div class="logo"> <a href="#"><img src="imagens/pratoheader.png"/></a></div> 
-              
-              <div> <h1 class="titulo1">
-                Fast Food  </h1>
-        <h1 class="titulo2">
-               Delicious      </h1>    </div> 
-                
-               <div class="menu"> 
+<header id="topo">
+        <nav>
+            <div class="logo"> <a href="#"><img src="imagens/pratoheader.png" /></a></div>
+
+            <div>
+                <h1 class="titulo1">
+                    Fast Food </h1>
+                <h1 class="titulo2">
+                    Delicious</h1>
+            </div>
+
+            <div class="menu">
                 <ul>
-                    <li><a href="#suporte">Suporte</a></li>
-                    <li><a href="#pedidos">Pedidos</a></li>
-                    <li><a href="index.php">sair</a></li>
-                  
-                </ul></div>
-            </nav>            
-                  
-            </header>
+                    <li><a href="login.php">Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
             <!-- Trecho de busca e ordenacao dos produtos-->
   <section class="busca">

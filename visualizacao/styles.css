@@ -282,6 +282,32 @@ footer{
   border-radius: 10px ;
 }
 
+.form_login{
+  flex-direction: column;
+  height: 260px;
+  width:  400px;
+  background-color: #d028289a;
+  border-radius: 10px ;
+}
+
+.texto{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #EDEDED;
+    font-size: 40px;
+}
+
+.inputEntrar{
+  border-radius: 10px;
+  width: 150px;
+  height: 25px;
+}
+
+.login,.senha {
+    width: 300px;
+    height: 25px;
+}
+
 .flex-item{
   flex: 0.3px;
 }
@@ -298,6 +324,4 @@ label{
   color: #D6D6D6;
   font-weight: bold;
   
-}
- 
-    
+}   

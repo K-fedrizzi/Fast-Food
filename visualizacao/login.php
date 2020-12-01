@@ -11,7 +11,7 @@
 
 <body>
 
-<header id="topo">
+    <header id="topo">
         <nav>
             <div class="logo"> <a href="#"><img src="imagens/pratoheader.png" /></a></div>
 
@@ -32,42 +32,41 @@
         </nav>
     </header>
 
-            <div id="login">
+           
+    <div class="form_login">
+        <span class="texto">Login</span><br>
+        <form method="post" action=".\login.php">
+            <p>
+                <input class="login" name="email_login" required="required" type="text"
+                    placeholder="E-mail ou telefone" /> </center>
+            </p>
 
-                <form method="post" action=".\login.php">
-                  
-                    <p>
+            <p>
+                <input class="senha" name="senha_login" required="required" type="password" placeholder="Senha" />
+                </center>
+            </p>
 
-                        <input id="email_login" name="email_login" required="required" type="text"
-                            placeholder="E-mail ou telefone" /> </center>
-                    </p>
+            <p>
+                <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+                <label for="manterlogado">Manter-me logado</label>
+            </p>
 
-                    <p>
-                        <input id="senha_login" name="senha_login" required="required" type="password"
-                            placeholder="Senha" /> </center>
-                    </p>
-
-                    <p>
-                        <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
-                        <label for="manterlogado">Manter-me logado</label>
-                    </p>
-
-                    <p>
-                    <div class="Entrar">
-                        <button class="button" type="submit" >Entrar</button>
-                    </div>
-                </form>
-
-                </p>
-                <div class="Link">
-                    <p class="link">
-                        Não possui conta?
-                        <a href="cadastro.php">Cadastre-se já</a>
-                    </p>
-                </div>
+            <p>
+            <div class="Entrar">
+                <button class="button inputEntrar" type="submit" onclick="login()">Entrar</button>
             </div>
+        </form>
 
-            <?php
+        </p>
+        <div class="Link">
+            <p class="link">
+                Não possui conta?
+                <a href="cadastro.php">Cadastre-se já</a>
+            </p>
+        </div>
+    </div>
+
+    <?php
                  include_once '.\..\modelo\Cliente.php';
                  if(isset( $_POST['email_login']) && isset($_POST['senha_login'])){
 
@@ -75,15 +74,16 @@
                  
                     if ( $r == true){
   
-                        // Criar Sessão
+                        // Criar Sessão e salva o email e o nome do usuário
                         session_start();
                         $_SESSION['usuario'] = $_POST['email_login'];
+                        $_SESSION['nome'] = Cliente::buscarNome($_POST['email_login']);
                       
                         // Chama a proxima página
-                     //   require('C:\Users\Emerson_Costa\Desktop\trabalho_progweb\visualizacao\lista.php');
-                          header('Location: lista.php');//use isso para acessar a pagina dentro da pasta
+                        header('Location: lista.php');
   
                     } else {
+                        // Retorna uma mensagem de erro
                         echo  "<script>alert('Usuario ou Senha Incorretos!');</script>";
                     }
                  }

@@ -93,14 +93,12 @@ class Cliente{
             return $usuario;
         } else {
             return NULL;
-        }
-
-        
+        }   
     }
-     /**
-     * Metodo para autenticar usuário e senha 
-     * @return
-     */
+    /**
+    * Metodo para autenticar usuário e senha 
+    * @return
+    */
     public static function autenticarUsuario(string $email, string $senha) {
         $db = Banco::getInstance();
 
@@ -118,5 +116,20 @@ class Cliente{
 
             return false;
         }
+    }
+    /**
+    * Metodo para autenticar usuário e senha 
+    * @return
+    */
+    public static function buscarNome(string $email) {
+        $db = Banco::getInstance();
+
+        $stmt = $db->prepare('SELECT * FROM Cliente WHERE email = :email');
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+
+        $resultado = $stmt->fetch();
+
+        return $resultado['nome'];
     }
 }?>
