@@ -1,0 +1,382 @@
+
+body{
+    width: 100%;
+    height: auto;
+   
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+     text-align: center;
+      
+  padding-bottom: 40px;
+  background-color: #FFE4E1;
+     
+  }
+  nav{
+  width: 800px;
+   display: inline-flex;
+   padding-top: 10px;
+   
+  }
+   
+  nav div{
+    width: 33.333%;
+    height: 100%;
+   
+       margin-right: 0px;
+  
+  }
+  .logo img{
+    width: 80%;
+    height: 80%;
+  }
+   a{
+     
+  text-decoration: none;
+      }
+      .titulo1{
+        font-family: "Russo One";
+        text-align: center;
+        font-size: 50px;
+        font-weight: bolder;
+      }
+      
+      .titulo2{
+        font-family: "Russo One";
+        color:#FF0000;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bolder;
+        top: auto;
+      }
+   
+  
+     nav div ul {
+       margin: auto;
+       display: inline-flex;
+       width:100px;
+       
+  }
+     nav div ul li a{
+width:auto;
+  list-style-type: none;  
+   padding-left: 10px;
+     }
+      h2{
+         font-size: 200%;
+         color: black;
+         display: inline;
+         align-items:center ;
+          padding: 10%;
+    /****************************/    
+
+     }
+     .busca div{
+         width: 500px;
+         align-items: center;
+         display: flex;
+        padding-bottom: 50px;
+     }
+     .busca .lupa{
+         width: 25px;
+         height: 25px;
+         padding-right: 10px;
+     }
+     .busca .lupa img{
+        width: 15px;
+        height: 15px;
+     }
+     .busca .inputTx{
+        width: 500px;
+        height: 20px;
+    }
+    .busca .inputTx input{
+        width: 500px;
+        height: 20px;
+    }
+    .busca .pesquisarBt button{
+        width: auto;
+        height: 25px;
+    }
+/*******************************/
+.itemsOrd div{
+    display:inline-flex;
+    margin-left: 5px;
+}
+/*******************************/
+ul li{
+    list-style-type: none;
+}
+.sessao{
+    width: 800px;
+    height: auto;
+    background-color: #F4F0F0;
+    padding-top: 10px;
+    display:grid;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.item {
+    width: 800px;
+    height:auto;
+    background-color: #F4F0F0;
+    display: inline-flex;
+}
+.item .imagem{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+  margin:0px auto;
+  justify-content: center;
+ }
+.item .imagem img{
+    width: 175px;
+    height: 175px;
+align-items: center;
+}
+.item .info{
+    width: 500px;
+    height: auto;
+    display: grid;
+}
+.item .info .titulo{
+  
+   
+    display: inline;
+  text-align: left;
+  padding-left: 10px;
+  padding-bottom: 60px;
+}
+.item .info .titulo .nomeProduto{
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+}
+.item .info .titulo .nomeRestaurante{
+    font-size: 15px;
+    color: red;
+    font-weight: bolder;
+}
+.item .info .descricao{
+    display: inline;
+    text-align: left;
+    padding-left: 5px;
+  
+}
+.descricao .avaliacao {
+    width: 100%;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    
+}
+
+.avaliacao .estrelas {
+
+    align-items: center;
+     padding-right: 5px;
+  }
+.estrelas li{
+  list-style-type: none;
+  display: inline-flex;
+  padding-right: 5px;
+     }
+     /*****************************/
+     .estrelas label{
+        list-style-type: none;
+        display: inline-flex;
+        padding-right: 5px;
+           }
+  .avaliacao .pontuacao  {
+ 
+      display: grid;
+      flex-direction: column;
+  padding-right: 5px;
+  }
+  .avaliacaoBt  {
+      display: grid;
+      flex-direction: column;
+      padding-right: 5px;
+  }
+  .avaliacaoBt .avaliacoesBt{
+      border: none;
+      text-decoration: underline;
+  }
+  .descricaoTx{
+     width:auto ;
+     height:40px;
+    justify-content:left;
+  text-align: left;
+  overflow: hidden;
+  color: black;
+display: inline-flex;
+justify-content: space-between;
+padding-top: 10px;
+margin-bottom: 20px;
+background-color: #F4F0F0;
+  }
+  .descricao .pontuacao{
+      
+    font-size: 30px;
+    font-weight: bolder;
+    color :black;
+  }
+  .descricaoTx .btexp{
+      width:auto;
+      height: auto;
+      right: 0px;
+      margin-left: 20px;
+  }
+  .novoComentario{
+      align-items: center;
+    margin: 0 auto;
+  }
+ 
+.avaliacaoTx{
+    display: none;
+    
+    border-top:1px outset grey; 
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.minimizarAv {
+   
+   margin: 10px 150px;
+   display: grid;
+   justify-content: right;
+   padding-right: 0px;
+}
+
+.listaAvaliacao{ 
+    width: 450px;
+    padding-left: 50px; 
+    padding-right: 50px; 
+   height:100px;         
+    display: grid;
+    justify-content: left;
+    overflow-x: auto;
+    margin:0 auto;
+    margin-top: 10px;
+    
+}
+
+.listaAvaliacao ul li {
+  display: inline-flex;
+  width: 400px;
+
+    padding-left: 5px;
+    margin:5px;
+   
+}
+.listaAvaliacao ul li div{
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    padding-left: 5px;
+    
+    padding-bottom: 10px;
+}
+.listaAvaliacao .nomeLista{
+    width: 80px;
+    height: auto;
+    font-size: 16px;
+}
+.listaAvaliacao .textoLista{
+    width: 400px;
+    height: auto;
+    font-size: 14px;
+    padding-bottom: 10px;
+    background-color: gray;
+
+}
+.novoComentario{
+    display: grid;
+    width: 600px;
+    height: 100px;
+
+    padding-top: 20px;
+    margin: 0 auto;
+}
+.novoComentario .caixaInput{
+    width: 480px;
+    height:50px;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 50px;
+    
+    
+}
+.novoComentario .caixaInput div{
+    padding-right: 5px;
+    vertical-align: bottom; 
+}
+.novoComentario .caixaInput .comentario{
+    width: 600px;
+    height: 50px;
+resize: none;
+}
+.enviar{
+    padding-right: 80px;
+}
+ .enviar button {
+    width: 55px;
+    height: 20px;
+   align-items:center ;
+float: right;
+}
+
+.minhaAvaliacao {
+display: inline-flex;
+align-items: center;
+
+
+}
+.minhaAvaliacao .valorPontuacao{
+      padding-left:20px;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color :black;
+    }
+    .estrela{
+        width: 30px;
+        height: 30px;
+      
+        
+    }
+  
+    .estrelaApagada{
+       
+        filter:opacity(50%);
+    }
+    .estrelas ul li button{
+        background-color: transparent;
+        border: transparent;
+    }
+    .myAvaliacao button{
+        background-color: transparent;
+        border: transparent;
+    }
+
+    /**********************************/
+    .compra{
+        display: grid;
+        width: 100px;
+        height:200px;
+    padding-top: 5px;
+    }
+    .compra img{
+        width: 40px;
+        height: 30px;
+    }
+    .compra .preco{
+        font-size: 20px;
+        font-weight: bolder;
+    }
+  .compra button{
+      width: 80px;
+      height: auto;
+  }
+  

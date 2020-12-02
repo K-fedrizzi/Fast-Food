@@ -1,0 +1,51 @@
+form{
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    background-color:#E85251;
+    border-radius: 10px;
+    border: black 1px solid;
+    margin-bottom: 10px;
+    
+   
+}
+form div{
+    display: grid;
+    margin-inline-end: auto;
+}
+form input{
+    height: 20px;
+    width: 100px;
+}
+input[type="submit"]{
+    margin-top: 20px;
+    width: 80px;
+    height: 25px;     
+}
+
+#form2{
+    width: 100%;
+    height: 40px;
+}
+#submit2{
+    margin-top: auto;
+    width: 80px;
+    height: 25px;     
+
+}
+#form3{
+    width: 100%;
+    height: 40px;
+}
+#submit3{
+    margin-top: auto;
+    width: 80px;
+    height: 25px;     
+
+}
+
+#form1{
+    width: 100%;
+    height: 60px;
+}
